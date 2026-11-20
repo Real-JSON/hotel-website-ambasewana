@@ -1,26 +1,26 @@
-import { galleryImgs } from '../../../constants';
+import { galleryImgs } from "../../../constants";
 
 function Gallery() {
     const showDreamImages = () => {
-        const showImages = document.querySelectorAll('.showOnBtn');
+        const showImages = document.querySelectorAll(".showOnBtn");
         showImages.forEach((img) => {
-            img.style.display = 'block';
+            img.style.display = "block";
         });
-        const moreButton = document.querySelector('.ShowImgBtn');
-        moreButton.style.display = 'none';
-        const lessButton = document.querySelector('.hideImgBtn');
-        lessButton.style.display = 'block';
+        const moreButton = document.querySelector(".ShowImgBtn");
+        moreButton.style.display = "none";
+        const lessButton = document.querySelector(".hideImgBtn");
+        lessButton.style.display = "block";
     };
 
     const hideDreamImages = () => {
-        const hideImages = document.querySelectorAll('.showOnBtn');
+        const hideImages = document.querySelectorAll(".showOnBtn");
         hideImages.forEach((img) => {
-            img.style.display = 'none';
+            img.style.display = "none";
         });
-        const lessButton = document.querySelector('.hideImgBtn');
-        lessButton.style.display = 'none';
-        const moreButton = document.querySelector('.ShowImgBtn');
-        moreButton.style.display = 'block';
+        const lessButton = document.querySelector(".hideImgBtn");
+        lessButton.style.display = "none";
+        const moreButton = document.querySelector(".ShowImgBtn");
+        moreButton.style.display = "block";
     };
 
     return (
@@ -37,7 +37,7 @@ function Gallery() {
                             {/* Loop through each image in the column's colData array */}
                             {column.colData.map((imgSrc, imgId) => (
                                 // Render each image with a unique key and image path
-                                <div key={imgId} data-aos="zoom-in">
+                                <div key={imgId}>
                                     <img src={imgSrc.imgPath} alt="image" />
                                 </div>
                             ))}

@@ -10,11 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "aos": "^2.3.4",
     "axios": "^1.8.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.3.0",
     "react-router-hash-link": "^2.4.3",
     "styled-components": "^6.1.15"

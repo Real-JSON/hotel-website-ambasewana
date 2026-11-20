@@ -1,4 +1,4 @@
-import { events } from '../../../constants';
+import { events } from "../../../constants";
 
 const Events = () => {
     return (
@@ -10,11 +10,7 @@ const Events = () => {
                 <div className="event-card-container">
                     <div className="card-area">
                         {events.map((event) => (
-                            <div
-                                key={event.id}
-                                className="event-card"
-                                data-aos="zoom-in"
-                            >
+                            <div key={event.id} className="event-card">
                                 <img src={event.imgPath} alt={event.id} />
                                 <div className="card-content">
                                     <h3>{event.name}</h3>

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
     let navigate = useNavigate();
@@ -11,11 +11,11 @@ function Hero() {
         <>
             <div className="bg-img"></div>
             <div className="hero-text-container">
-                <div className="hero-text" data-aos="fade-right">
+                <div className="hero-text hero-text--reveal">
                     <h2>
-                        {' '}
+                        {" "}
                         Welcome to Hotel <br />
-                        <span>Ambasewana</span>{' '}
+                        <span>Ambasewana</span>{" "}
                     </h2>
                     <p> Where Heritage Meets Luxury!</p>
                     <button className="animated-button" onClick={routeChange}>

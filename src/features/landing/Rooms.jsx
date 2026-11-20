@@ -1,4 +1,4 @@
-import { rooms } from '../../../constants';
+import { rooms } from "../../../constants";
 
 const Rooms = () => {
     return (
@@ -10,11 +10,7 @@ const Rooms = () => {
                 <div className="room-card-container">
                     <div className="room-card-area">
                         {rooms.map((room) => (
-                            <div
-                                key={room.id}
-                                className="room-card"
-                                data-aos="zoom-in"
-                            >
+                            <div key={room.id} className="room-card">
                                 <img src={room.imgPath} alt={room.id} />
                                 <div className="card-content">
                                     <h3>{room.name}</h3>
