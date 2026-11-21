@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-// Static room catalog displayed in the cards and booking modal
+// Static room catalog displayed in the cards and booking modal (Rs. 5,000 - 10,000 range)
 const rooms = [
     {
         id: "king-rooms",
         name: "King Rooms",
-        price: "$620",
-        nightlyRate: 620,
+        price: "Rs. 6,500",
+        nightlyRate: 6500,
         description:
             "Escape to a peaceful retreat tucked in lush surroundings, perfect for a slow, mindful reset.",
         rating: "4.7",
@@ -17,8 +17,8 @@ const rooms = [
     {
         id: "couple-rooms",
         name: "Couple Rooms",
-        price: "$890",
-        nightlyRate: 890,
+        price: "Rs. 8,000",
+        nightlyRate: 8000,
         description:
             "Experience a serene suite with panoramic views, private balcony, and magical sunset horizons.",
         rating: "4.8",
@@ -28,8 +28,8 @@ const rooms = [
     {
         id: "guest-rooms",
         name: "Guest Rooms",
-        price: "$1,050",
-        nightlyRate: 1050,
+        price: "Rs. 9,800",
+        nightlyRate: 9800,
         description:
             "Elevated comfort with floor-to-ceiling windows, warm ambient interiors, and tranquil views.",
         rating: "4.9",
@@ -93,10 +93,10 @@ const BookingModal = ({ room, onClose }) => {
     // Do not render anything when no room is selected
     if (!room) return null;
 
-    // Derive stay nights and formatted estimated total from selected dates and nightly rate
+    // Derive stay nights and formatted estimated total in Rs. from selected dates and nightly rate
     const nights = calculateNights(formData.checkIn, formData.checkOut);
     const estimatedTotal = room.nightlyRate
-        ? (room.nightlyRate * nights).toLocaleString()
+        ? `Rs. ${(room.nightlyRate * nights).toLocaleString()}`
         : null;
 
     // Updates form fields and keeps check-out at least one day after check-in
@@ -433,7 +433,7 @@ const BookingModal = ({ room, onClose }) => {
                                         {nights === 1 ? "night" : "nights"}
                                     </span>
                                     <span className="font-semibold text-amber-100">
-                                        Estimated: ${estimatedTotal}
+                                        Estimated: {estimatedTotal}
                                     </span>
                                 </div>
                             )}
@@ -481,7 +481,7 @@ const Rooms = ({ onBookRoom }) => {
             aria-labelledby="rooms-heading"
             className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-32"
         >
-            {/* Section Heading */}
+            {/* Section Heading (Matches centered eyebrow + serif heading + gold line style) */}
             <div className="mb-12 text-center sm:mb-16">
                 <span className="mb-4 block font-body text-xs font-semibold uppercase tracking-[0.3em] text-(--main-clr)">
                     Your Stay, Your Comfort
