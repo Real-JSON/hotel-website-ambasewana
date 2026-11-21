@@ -1,51 +1,57 @@
 import { useNavigate } from "react-router-dom";
 
 function Hero() {
-    let navigate = useNavigate();
-    const routeChange = () => {
-        let path = `/booking`;
-        navigate(path);
-    };
+    const navigate = useNavigate();
 
     return (
-        <>
-            <div className="bg-img"></div>
-            <div className="hero-text-container">
-                <div className="hero-text hero-text--reveal">
-                    <h2>
-                        {" "}
-                        Welcome to Hotel <br />
-                        <span>Ambasewana</span>{" "}
-                    </h2>
-                    <p> Where Heritage Meets Luxury!</p>
-                    <button className="animated-button" onClick={routeChange}>
-                        <svg
-                            viewBox="0 0 24 24"
-                            className="arr-2"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-                        </svg>
-                        <span className="text">Book Now</span>
-                        <span className="circle"></span>
-                        <svg
-                            viewBox="0 0 24 24"
-                            className="arr-1"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
-                        </svg>
+        <section className="relative isolate flex min-h-svh w-full items-end overflow-hidden bg-bg">
+            {/* Hero Image */}
+            <img
+                src="/assets/hero-image/hero-image.jpg"
+                alt=""
+                className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+            />
+
+            {/* Image Overlay */}
+            <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/30 to-black/20" />
+
+            {/* Hero Content */}
+            <div className="mx-auto w-full max-w-7xl px-5 pb-12 pt-32 sm:px-8 sm:pb-16 md:px-12 lg:pb-20">
+                <div className="max-w-4xl">
+                    <p className="mb-3 font-body text-xs font-semibold uppercase tracking-[0.25em] text-main sm:text-sm">
+                        Welcome to Hotel
+                    </p>
+
+                    <h1 className="font-heading text-[clamp(2.8rem,8.5vw,7.5rem)] font-medium leading-[0.95] tracking-tight text-white">
+                        Ambasewana
+                    </h1>
+
+                    <p className="mt-4 max-w-xl font-description text-[clamp(1.25rem,3vw,2rem)] italic leading-snug text-white/90">
+                        Where Heritage Meets Luxury!
+                    </p>
+
+                    <button
+                        type="button"
+                        onClick={() => navigate("/booking")}
+                        className="group mt-8 inline-flex min-h-14 items-center gap-5 rounded-full border border-white/70 px-6 py-3 font-body text-sm font-semibold uppercase tracking-wider text-white transition-colors duration-300 hover:border-main hover:bg-main hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-main"
+                    >
+                        Book Now
+                        <span className="flex size-8 items-center justify-center rounded-full bg-main text-bg transition-transform duration-300 group-hover:rotate-45">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                className="size-4"
+                                aria-hidden="true"
+                            >
+                                <path d="M7 17 17 7M7 7h10v10" />
+                            </svg>
+                        </span>
                     </button>
-                    <div className="book-now" onClick={routeChange}>
-                        <div className="btn-text">
-                            <button>
-                                Book Now <i className="ri-arrow-right-line"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 
