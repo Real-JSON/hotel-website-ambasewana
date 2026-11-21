@@ -6,7 +6,7 @@ const events = [
     {
         id: "birthdays",
         name: "Birthday Parties",
-        price: "From $450",
+        price: "From LKR 85,000",
         description:
             "Celebrate milestones with tailored setups, curated dining options, and a warm, lively atmosphere.",
         rating: "4.8",
@@ -16,7 +16,7 @@ const events = [
     {
         id: "weddings",
         name: "Weddings",
-        price: "From $2,400",
+        price: "From LKR 450,000",
         description:
             "Host unforgettable ceremonies and receptions with dedicated event coordination and scenic backdrops.",
         rating: "4.9",
@@ -26,7 +26,7 @@ const events = [
     {
         id: "parties",
         name: "Night Parties",
-        price: "From $680",
+        price: "From LKR 125,000",
         description:
             "Evening gatherings featuring ambient lighting, signature refreshments, and energetic music setups.",
         rating: "4.7",
