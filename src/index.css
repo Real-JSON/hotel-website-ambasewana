@@ -1,11 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    overflow-x: hidden;
-}
+@import "tailwindcss";
 
 :root {
     --bg-color: #121212;
@@ -13,11 +6,21 @@
     --main-clr: #d4c56d;
 
     --big-font: 5.4rem;
-    --p-font: 1rem;
+    --paragraph-size: 1rem;
 
-    --heading-font: 'Playfair Display', serif;
-    --p-font: 'Montserrat', sans-serif;
-    --heading-description-font: 'Cormorant Garamond', serif;
+    --heading-font: "Playfair Display", serif;
+    --body-font: "Montserrat", sans-serif;
+    --heading-description-font: "Cormorant Garamond", serif;
+}
+
+@theme {
+    --color-bg: #121212;
+    --color-text: #fff;
+    --color-main: #d4c56d;
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Montserrat", sans-serif;
+    --font-description: "Cormorant Garamond", serif;
 }
 
 html {
@@ -28,13 +31,9 @@ body {
     background-color: var(--bg-color);
     color: var(--text-clr);
     min-height: 100vh;
+    font-family: var(--body-font);
 }
 
 a {
     color: inherit;
-}
-
-p,
-a {
-    font-family: var(--p-font);
 }
