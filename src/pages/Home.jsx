@@ -3,7 +3,7 @@ import About from "../features/landing/About";
 import Rooms from "../features/landing/Rooms";
 import Events from "../features/landing/Events";
 import Gallery from "../features/landing/Gallery";
-import Location from "../features/landing/Location";
+import FAQ from "../features/landing/FAQ";
 
 const Home = () => {
     return (
@@ -33,7 +33,7 @@ const Home = () => {
                 <Gallery />
             </section>
             <section id="location">
-                <Location />
+                <FAQ />
             </section>
         </>
     );
