@@ -7,8 +7,6 @@ import Loader from "./components/Loader";
 
 import Home from "./pages/Home";
 
-import "./App.css";
-
 const App = () => {
     const location = useLocation();
 
