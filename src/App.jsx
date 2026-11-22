@@ -1,44 +1,47 @@
-import { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom"; // Routes & Route import karanna
+import { useCallback, useEffect, useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-// Common Components
-import Navbar from "./components/common/Navbar/Navbar"; // Path hariyatama balanna
-import Footer from "./components/common/FooterNew"; // FooterNew eka rename kara neda? Nattam FooterNew ma danna
+import Navbar from "./components/common/Navbar/Navbar";
+import Footer from "./components/common/FooterNew";
+import Loader from "./components/common/Loader";
 
-// Pages
-import Home from "./pages/Home"; // Aluth Home page eka
-import Booking from "./pages/Booking"; // Aluth Booking page eka
+import Home from "./pages/Home";
+import Booking from "./pages/Booking";
 
 import "./App.css";
 
 const App = () => {
     const location = useLocation();
 
-    useEffect(() => {
-        // 1. Scroll Restoration Logic
-        if ("scrollRestoration" in history) {
-            history.scrollRestoration = "manual";
-        }
-        window.scrollTo(0, 0);
+    const [showLoader, setShowLoader] = useState(true);
 
-        // 2. Clear URL Hash
-        if (window.location.hash) {
-            window.history.replaceState(null, "", window.location.pathname);
+    const handleLoaderComplete = useCallback(() => {
+        setShowLoader(false);
+    }, []);
+
+    useEffect(() => {
+        if ("scrollRestoration" in window.history) {
+            window.history.scrollRestoration = "manual";
         }
-    }, [location.pathname]); // Path eka maru wena hama welemane meka wenna one
+
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
 
     return (
-        <main>
-            <Navbar />
+        <>
+            {showLoader && <Loader onComplete={handleLoaderComplete} />}
 
-            {/* Route Switcher eka methanata enne */}
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/booking" element={<Booking />} />
-            </Routes>
+            <main inert={showLoader} aria-busy={showLoader}>
+                <Navbar />
 
-            <Footer />
-        </main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/booking" element={<Booking />} />
+                </Routes>
+
+                <Footer />
+            </main>
+        </>
     );
 };
 
