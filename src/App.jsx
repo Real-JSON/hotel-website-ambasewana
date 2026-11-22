@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 
 import Home from "./pages/Home";
-import Booking from "./pages/Booking";
 
 import "./App.css";
 
@@ -36,7 +35,6 @@ const App = () => {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/booking" element={<Booking />} />
                 </Routes>
 
                 <Footer />
