@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import { navLinks } from "../../../../constants";
+import { navLinks } from "/constants";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

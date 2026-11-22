@@ -1,4 +1,4 @@
-import { navLinks } from "../../../constants";
+import { navLinks } from "../../constants";
 
 const HOTEL_MAP_QUERY =
     "Ambasewana Walawwa, Aranayaka Road, Mawanella, Ussapitiya, Sri Lanka";
