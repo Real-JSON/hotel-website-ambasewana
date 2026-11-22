@@ -1,8 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
 function Hero() {
-    const navigate = useNavigate();
-
     return (
         <section className="relative isolate flex min-h-svh w-full items-end overflow-hidden bg-bg">
             {/* Hero Image */}
@@ -32,7 +28,6 @@ function Hero() {
 
                     <button
                         type="button"
-                        onClick={() => navigate("/booking")}
                         className="group mt-8 inline-flex min-h-14 items-center gap-5 rounded-full border border-white/70 px-6 py-3 font-body text-sm font-semibold uppercase tracking-wider text-white transition-colors duration-300 hover:border-main hover:bg-main hover:text-bg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-main"
                     >
                         Book Now

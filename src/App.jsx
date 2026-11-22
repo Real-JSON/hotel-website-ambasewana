@@ -1,14 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import Navbar from "./components/common/Navbar/Navbar";
-import Footer from "./components/common/FooterNew";
-import Loader from "./components/common/Loader";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Loader from "./components/Loader";
 
 import Home from "./pages/Home";
-import Booking from "./pages/Booking";
-
-import "./App.css";
 
 const App = () => {
     const location = useLocation();
@@ -36,7 +33,6 @@ const App = () => {
 
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/booking" element={<Booking />} />
                 </Routes>
 
                 <Footer />
